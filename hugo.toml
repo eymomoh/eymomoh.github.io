@@ -93,7 +93,7 @@ pagination.pagerSize = 5
       words = "words"
 
       [languages.en.params.logo]
-        logoText = "EYAN'S_CREATIONS"
+        logoText = "EYAN MOMOH"
         logoHomeLink = "/"
 
       [languages.en.menu]

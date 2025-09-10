@@ -11,11 +11,10 @@
     <loc>//localhost:1313/projects/</loc>
     <lastmod>2025-09-09T20:27:36-07:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/about/</loc>
-    <lastmod>2025-09-09T19:38:07-07:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/projects/first-post-project/my-first-post/</loc>
     <lastmod>2025-09-09T19:34:25-07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/about/</loc>
   </url><url>
     <loc>//localhost:1313/archive/</loc>
   </url><url>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Eyan&#39;s_Creations</title>
+    <title>home on Eyan&#39;s_Creations</title>
     <link>//localhost:1313/</link>
-    <description>Recent content on Eyan&#39;s_Creations</description>
+    <description>Recent content in home on Eyan&#39;s_Creations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 09 Sep 2025 20:27:36 -0700</lastBuildDate>
@@ -16,18 +16,18 @@
       <description></description>
     </item>
     <item>
-      <title>About Me</title>
-      <link>//localhost:1313/about/</link>
-      <pubDate>Tue, 09 Sep 2025 19:38:07 -0700</pubDate>
-      <guid>//localhost:1313/about/</guid>
-      <description>&lt;p&gt;wowwee&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>My First Post</title>
       <link>//localhost:1313/projects/first-post-project/my-first-post/</link>
       <pubDate>Tue, 09 Sep 2025 19:34:25 -0700</pubDate>
       <guid>//localhost:1313/projects/first-post-project/my-first-post/</guid>
       <description>&lt;p&gt;#hello world&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About Me</title>
+      <link>//localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/about/</guid>
+      <description>&lt;h1 id=&#34;heading&#34;&gt;heading&lt;/h1&gt;&#xA;&lt;h2 id=&#34;heading-1&#34;&gt;heading&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;code&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;wowwee&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
