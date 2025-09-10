@@ -1,3 +1,3 @@
-[submodule "hugo-theme-stack"]
-	path = hugo-theme-stack
-	url = git@github.com:eymomoh/hugo-theme-stack-fork.git
+[submodule "themes/stack"]
+    path = themes/stack
+    url = https://github.com/eymomoh/hugo-theme-stack-fork.git
