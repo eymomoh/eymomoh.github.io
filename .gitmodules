@@ -1,3 +1,6 @@
 [submodule "themes/stack"]
     path = themes/stack
     url = https://github.com/eymomoh/hugo-theme-stack-fork.git
+[submodule "hugo-theme-terminal"]
+	path = themes/terminal
+	url = https://github.com/panr/hugo-theme-terminal.git
