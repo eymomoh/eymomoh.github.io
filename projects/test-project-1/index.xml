@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test Project 1 on Eyan&#39;s_Creations</title>
+    <link>//localhost:1313/projects/test-project-1/</link>
+    <description>Recent content in Test Project 1 on Eyan&#39;s_Creations</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="//localhost:1313/projects/test-project-1/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
