@@ -17,11 +17,11 @@
           <div class="post-item">
             <div class="post-item-inner">
               <a href="{{ $showcaseProject.Permalink }}">
-                <h3>{{ $showcaseProject.Title }}</h3>
+                <h1>{{ $showcaseProject.Title }}</h1>
                 {{ with $showcaseProject.Params.thumbnail }}
                   {{ $image := $showcaseProject.Resources.GetMatch . }}
                   {{ if $image }}
-                    <img src="{{ $image.Permalink }}" alt="{{ $showcaseProject.Title }}" style="max-width: 200px; height: auto;"/>
+                    <img src="{{ $image.Permalink }}" alt="{{ $showcaseProject.Title }}" style="width: auto; height: auto;"/>
                   {{ end }}
                 {{ end }}
                 <p class="post-summary">{{ $showcaseProject.Params.summary }}</p>

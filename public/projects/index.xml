@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Eyan&#39;s_Creations</title>
+    <title>Projects on </title>
     <link>//localhost:1313/projects/</link>
-    <description>Recent content in Projects on Eyan&#39;s_Creations</description>
+    <description>Recent content in Projects on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 11 Sep 2025 21:14:12 -0700</lastBuildDate>
@@ -20,7 +20,7 @@
       <link>//localhost:1313/projects/test-project-1/</link>
       <pubDate>Thu, 11 Sep 2025 19:11:08 -0700</pubDate>
       <guid>//localhost:1313/projects/test-project-1/</guid>
-      <description>A brief, exciting one-liner about this project.</description>
+      <description>test project go burrrr</description>
     </item>
   </channel>
 </rss>

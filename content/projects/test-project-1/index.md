@@ -5,7 +5,7 @@ title: "Test Project 1"
 # It's a good idea to set it to the project's folder name and never change it.
 uid: "test-project-1"
 date: 2025-09-11T19:11:08-07:00
-summary: "A brief, exciting one-liner about this project."
+summary: "test project go burrrr"
 thumbnail: "placeholder.png" # Place a thumbnail image in this project's folder
 technologies: [] # e.g., ["Unity", "Blender", "C#"]
 showcase: false # Set to 'true' to feature this on the homepage

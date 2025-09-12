@@ -2,7 +2,7 @@
 <html lang="en">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
-    <title>Devlogs :: Eyan&#39;s_Creations</title>
+    <title>Devlogs :: </title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,7 +80,7 @@
 <meta property="og:title" content="Devlogs">
 <meta property="og:description" content="" />
 <meta property="og:url" content="//localhost:1313/devlogs/" />
-<meta property="og:site_name" content="Eyan&#39;s_Creations" />
+<meta property="og:site_name" content="" />
 
   <meta property="og:image" content="//localhost:1313/og-image.png">
 
@@ -91,7 +91,7 @@
 
 
 
-  <link href="/devlogs/index.xml" rel="alternate" type="application/rss+xml" title="Eyan&#39;s_Creations" />
+  <link href="/devlogs/index.xml" rel="alternate" type="application/rss+xml" title="" />
 
 
 
@@ -180,6 +180,95 @@
     
   
   <div class="posts">
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="//localhost:1313/devlogs/lift00/">Lift00</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2025-09-11</time></div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <blockquote>
+<p>[<em>Description</em>]
+this new movement system makes it almost feel like quake live movement. momentum acquired!</p></blockquote>
+<blockquote>
+<p>[<em>Screenshots</em>]
+<img src="/projects/lift/lift-main-menu.png" alt=""></p></blockquote>
+<blockquote>
+<p>[<em>Code</em>]
+
+
+
+<details class="collapsable-code" open>
+    <summary title="Click to interact"></summary>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="cl"><span class="c1"># Source-Like Movement</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">_ready</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="n">h_vel</span> <span class="o">=</span> <span class="n">velocity</span>
+</span></span><span class="line"><span class="cl">    <span class="n">h_vel</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="n">current_speed_limit</span> <span class="o">=</span> <span class="n">SPRINT_SPEED</span> <span class="k">if</span> <span class="nc">Input</span><span class="o">.</span><span class="nf">is_action_pressed</span><span class="p">(</span><span class="s2">&#34;sprint&#34;</span><span class="p">)</span> <span class="k">else</span> <span class="n">SPEED_DEFAULT</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nf">is_on_floor</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># --- Ground Movement ---</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Apply friction</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="n">speed</span> <span class="o">=</span> <span class="n">h_vel</span><span class="o">.</span><span class="nf">length</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">speed</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="n">drop</span> <span class="o">=</span> <span class="n">speed</span> <span class="o">*</span> <span class="n">friction</span> <span class="o">*</span> <span class="n">delta</span>
+</span></span><span class="line"><span class="cl">            <span class="n">h_vel</span> <span class="o">*=</span> <span class="nb">max</span><span class="p">(</span><span class="n">speed</span> <span class="o">-</span> <span class="n">drop</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">speed</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1"># Apply ground acceleration</span>
+</span></span><span class="line"><span class="cl">        <span class="n">h_vel</span> <span class="o">=</span> <span class="nf">_accelerate</span><span class="p">(</span><span class="n">h_vel</span><span class="p">,</span> <span class="n">wish_dir</span><span class="p">,</span> <span class="n">current_speed_limit</span><span class="p">,</span> <span class="n">ground_accel</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># --- Air Movement ---</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Use the _accelerate function for air movement too.</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># The key is the `air_strafe_speed` which dictates how much &#34;purchase&#34; your strafe has.</span>
+</span></span><span class="line"><span class="cl">        <span class="n">h_vel</span> <span class="o">=</span> <span class="nf">_accelerate</span><span class="p">(</span><span class="n">h_vel</span><span class="p">,</span> <span class="n">wish_dir</span><span class="p">,</span> <span class="n">air_strafe_speed</span><span class="p">,</span> <span class="n">air_accel</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">h_vel</span><span class="o">.</span><span class="n">x</span>
+</span></span><span class="line"><span class="cl">    <span class="n">velocity</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">h_vel</span><span class="o">.</span><span class="n">z</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># --- APPLY MOVEMENT ---</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">move_and_slide</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># --- POST-MOVEMENT JUICE ---</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="n">cam_tilt_input_dir</span> <span class="o">=</span> <span class="nc">Input</span><span class="o">.</span><span class="nf">get_vector</span><span class="p">(</span><span class="s2">&#34;move_left&#34;</span><span class="p">,</span><span class="s2">&#34;move_right&#34;</span><span class="p">,</span><span class="s2">&#34;move_forward&#34;</span><span class="p">,</span><span class="s2">&#34;move_backward&#34;</span><span class="p">,)</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">cam_tilt</span><span class="p">(</span><span class="n">cam_tilt_input_dir</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">weapon_tilt</span><span class="p">(</span><span class="n">cam_tilt_input_dir</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cam_tilt_input_dir</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">jump_weapon_tilt</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">weapon_bob</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="nf">length</span><span class="p">(),</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">footstep_component</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">footstep_component</span><span class="o">.</span><span class="nf">update_state</span><span class="p">(</span><span class="nf">is_on_floor</span><span class="p">(),</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">_accelerate</span><span class="p">(</span><span class="n">current_velocity</span><span class="p">:</span> <span class="nc">Vector3</span><span class="p">,</span> <span class="n">wish_dir</span><span class="p">:</span> <span class="nc">Vector3</span><span class="p">,</span> <span class="n">wish_speed</span><span class="p">:</span> <span class="kt">float</span><span class="p">,</span> <span class="n">accel</span><span class="p">:</span> <span class="kt">float</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Vector3</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="n">current_speed_in_wish_dir</span> <span class="o">=</span> <span class="n">current_velocity</span><span class="o">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">wish_dir</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="n">add_speed</span> <span class="o">=</span> <span class="n">wish_speed</span> <span class="o">-</span> <span class="n">current_speed_in_wish_dir</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">add_speed</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">current_velocity</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="n">accel_speed</span> <span class="o">=</span> <span class="n">accel</span> <span class="o">*</span> <span class="n">delta</span> <span class="o">*</span> <span class="n">wish_speed</span>
+</span></span><span class="line"><span class="cl">    <span class="n">accel_speed</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">accel_speed</span><span class="p">,</span> <span class="n">add_speed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">current_velocity</span> <span class="o">+</span> <span class="n">wish_dir</span> <span class="o">*</span> <span class="n">accel_speed</span></span></span></code></pre></div></details>
+</p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/devlogs/lift00/">[Read more]</a>
+          </div>
+        
+      </article>
     
       <article class="post on-list">
         <h2 class="post-title">

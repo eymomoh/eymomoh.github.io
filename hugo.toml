@@ -81,7 +81,7 @@ pagination.pagerSize = 5
 [languages]
   [languages.en]
     languageName = "English"
-    title = "Eyan's_Creations"
+    title = ""
 
     [languages.en.params]
       subtitle = "a place for my creations"
