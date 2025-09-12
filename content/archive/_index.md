@@ -1,8 +1,6 @@
 ---
-title: "Archives"
----
+title: "Archived Projects"
+date: 2025-09-11
 ---
 
-# Archive
-
----
+This page lists projects that have been archived.

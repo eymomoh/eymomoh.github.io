@@ -1,13 +1,6 @@
-+++
-draft = false 
-title = 'About Me'
-+++
+---
+title: "About Me"
+date: 2025-09-11
+---
 
-
-
-# heading
-## heading
-```
-code
-```
-**wowwee**
+This is the about page. Write about yourself here!

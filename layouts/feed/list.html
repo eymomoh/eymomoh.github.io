@@ -1,0 +1,45 @@
+{{ define "main" }}
+<div class="container">
+  <div class="content">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Content }}</p>
+    <div class="posts">
+      {{ $projects := where .Site.RegularPages "Type" "projects" }}
+      {{ $devlogs := where .Site.RegularPages "Type" "devlogs" }}
+      {{ $feedItems := $projects | union $devlogs }}
+      {{ $sortedFeed := $feedItems.ByDate.Reverse }}
+
+      {{ range $sortedFeed }}
+        <article class="post on-list">
+          {{ if eq .Section "projects" }}
+            <h2 class="post-title">
+              <span style="color: #87d7ff;">[Project]</span> <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+            </h2>
+            <div class="post-meta">
+              <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
+            </div>
+            <div class="post-content">
+              <p>{{ .Params.summary | markdownify }}</p>
+            </div>
+          {{ else if eq .Section "devlogs" }}
+            <h2 class="post-title">
+              <span style="color: #ffd787;">[Dev Log]</span> <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+            </h2>
+            <div class="post-meta">
+              <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
+              {{ with .Params.project_uid }}
+                {{ $projectPage := where $.Site.Pages "Params.uid" . | first 1 }}
+                {{ with $projectPage }}
+                  {{ range . }}
+                  <span class="devlog-project-link" style="color: #afafaf;">for <a href="{{ .Permalink }}">{{ .Title }}</a></span>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            </div>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -398,3 +398,44 @@ th,
 button {
 	font-weight: 600;
 }
+
+/* Custom styles for the image grid shortcode */
+.image-grid {
+  display: grid;
+  /* This creates a responsive grid that will leave empty cells on the last row if it's not full */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.5rem;
+  margin: 25px 0;
+}
+
+/* Override the default image styling for images within the grid */
+.image-grid img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid var(--accent); /* Use the theme's accent color for a thinner border */
+  padding: 0; /* Remove the default padding for a cleaner grid look */
+  border-radius: var(--radius); /* Use the theme's radius variable (which is 0) */
+  overflow: hidden;
+}
+
+/* Additional styles for sized items in the image grid */
+.grid-item-wide {
+  grid-column: span 2;
+}
+
+.grid-item-tall {
+  grid-row: span 2;
+}
+
+.grid-item-medium {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.grid-item-large {
+  grid-column: span 3;
+  grid-row: span 3;
+}

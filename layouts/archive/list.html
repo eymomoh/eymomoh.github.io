@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="content">
+      <h1>{{ .Title }}</h1>
+      <p>These are projects that have been archived.</p>
+      <div class="posts">
+        {{ $allProjects := .Site.GetPage "section" "projects"}}
+        {{ $archivedProjects := where $allProjects.Pages "Params.archived" true }}
+        {{ range $archivedProjects.ByDate.Reverse }}
+          <div class="post-item">
+            <div class="post-item-inner">
+              <a href="{{ .Permalink }}">
+                <h3 class="post-title">{{ .Title }}</h3>
+                <p class="post-summary">{{ .Params.summary }}</p>
+              </a>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

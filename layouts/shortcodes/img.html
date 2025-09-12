@@ -1,0 +1,25 @@
+{{- $src := .Get "src" -}}
+{{- $size := .Get "size" -}}
+{{- $page := .Page -}}
+{{- $image := $page.Resources.GetMatch $src -}}
+
+{{- if $image -}}
+  {{- $class := "grid-item" -}}
+  {{- if or (eq $size "small") (eq $size "") -}}
+    {{- /* Small is the default 1x1 size */ -}}
+  {{- else if eq $size "wide" -}}
+    {{- $class = "grid-item grid-item-wide" -}}
+  {{- else if eq $size "tall" -}}
+    {{- $class = "grid-item grid-item-tall" -}}
+  {{- else if eq $size "medium" -}}
+    {{- $class = "grid-item grid-item-medium" -}}
+  {{- else if eq $size "large" -}}
+    {{- $class = "grid-item grid-item-large" -}}
+  {{- end -}}
+
+  <a href="{{ $image.Permalink }}" class="{{ $class }} glightbox" data-gallery="gallery-{{ .Page.File.UniqueID }}">
+    <img src="{{ $image.Permalink }}" alt="{{ $page.Title }} image for {{ $src }}" loading="lazy">
+  </a>
+{{- else -}}
+  {{- .Page.Scratch.Set "shortcodeError" (printf "Image not found for src '%s' in page '%s'" $src .Page.File.Path) -}}
+{{- end -}}

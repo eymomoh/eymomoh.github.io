@@ -1,0 +1,44 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="content">
+      <h1 class="post-title">{{ .Title }}</h1>
+      <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+      
+      {{ with .Params.technologies }}
+        <div class="technologies">
+          <strong>Technologies:</strong> 
+          {{ range . }}
+            <span class="technology">{{ . }}</span>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      <div class="post-content">
+        {{ .Content }}
+      </div>
+
+      <hr/>
+
+      <h2>Development Logs</h2>
+      
+      {{ $project_uid := .Params.uid }}
+      {{ $devlogs := where .Site.RegularPages "Params.project_uid" $project_uid }}
+
+      {{ if gt (len $devlogs) 0 }}
+        <div class="devlogs-list">
+          {{ range $devlogs.ByDate.Reverse }}
+            <div class="devlog-item">
+              <a href="{{ .Permalink }}">
+                <h4 class="devlog-title">{{ .Title }}</h4>
+                <span class="devlog-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+              </a>
+            </div>
+          {{ end }}
+        </div>
+      {{ else }}
+        <p>No development logs for this project yet.</p>
+      {{ end }}
+
+    </div>
+  </div>
+{{ end }}

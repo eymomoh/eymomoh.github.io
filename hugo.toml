@@ -9,6 +9,10 @@ pagination.pagerSize = 5
 [markup.highlight]
   noClasses = false
 
+
+[taxonomies]
+  tag = 'tags'
+
 [params]
   # dir name of your main content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
@@ -33,7 +37,8 @@ pagination.pagerSize = 5
 
   # set post to show the last updated
   # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
-  showLastUpdated = false
+  showLastUpdated = true 
+  enableGitInfo = true
 
   # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
   # updatedDatePrefix = "Updated"
@@ -98,8 +103,8 @@ pagination.pagerSize = 5
 
       [languages.en.menu]
         [[languages.en.menu.main]]
-          identifier = "showcase"
-          name = "current_projects"
+          identifier = "projects"
+          name = "projects"
           url = "/projects"
 	  weight = 1
         [[languages.en.menu.main]]
@@ -107,6 +112,11 @@ pagination.pagerSize = 5
           name = "archive"
           url = "/archive"
 	  weight = 2
+        [[languages.en.menu.main]]
+          identifier = "feed"
+          name = "feed"
+          url = "/feed"
+          weight = 3
         [[languages.en.menu.main]]
           identifier = "about"
           name = "about"

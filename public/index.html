@@ -99,7 +99,7 @@
 
 
 
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
 
 </head>
@@ -125,11 +125,15 @@
     <ul class="menu__dropdown">
       
         
-          <li><a href="/projects">current_projects</a></li>
+          <li><a href="/projects">projects</a></li>
         
       
         
           <li><a href="/archive">archive</a></li>
+        
+      
+        
+          <li><a href="/feed">feed</a></li>
         
       
         
@@ -150,11 +154,15 @@
     
       
         
-          <li><a href="/projects" >current_projects</a></li>
+          <li><a href="/projects" >projects</a></li>
         
       
         
           <li><a href="/archive" >archive</a></li>
+        
+      
+        
+          <li><a href="/feed" >feed</a></li>
         
       
         
@@ -171,32 +179,39 @@
 
   <div class="content">
     
-  
-    <div class="index-content ">
-      <h1 id="home">Home</h1>
+  <div class="container">
+    <div class="content">
+      <h1>Eyan&#39;s_Creations</h1>
+      <p></p>
 
-    </div>
-  
-  <div class="posts">
-    
-    
-
-    
-    
       
-    
-    
+      
+      
 
-    
+      
+      
 
-    <div class="pagination">
-  <div class="pagination__buttons">
-    
-    
-    
-  </div>
-</div>
+      <hr/>
 
+      <h2>All Projects</h2>
+      <div class="posts">
+        
+        
+        
+        
+
+        
+          <div class="post-item">
+            <div class="post-item-inner">
+              <a href="//localhost:1313/projects/">
+                <h3 class="post-title">Projects</h3>
+                <p class="post-summary"></p>
+              </a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
   </div>
 
   </div>
@@ -221,7 +236,13 @@
 <script type="text/javascript" src="/bundle.min.js"></script>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script type="text/javascript">
+  const lightbox = GLightbox({
+    touchNavigation: true,
+    loop: true
+  });
+</script>
 
 
   
