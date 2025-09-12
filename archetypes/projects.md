@@ -8,8 +8,10 @@ date: {{ .Date }}
 summary: "A brief, exciting one-liner about this project."
 thumbnail: "placeholder.png" # Place a thumbnail image in this project's folder
 technologies: [] # e.g., ["Unity", "Blender", "C#"]
+tags: [] # e.g., ["personal-work", "commercial-work", "compute-shaders"]
 showcase: false # Set to 'true' to feature this on the homepage
 archived: false # Set to 'true' to move this to the archive page
+hidden: false
 ---
 
 HINT: Main Project Page content goes here

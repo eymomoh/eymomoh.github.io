@@ -12,6 +12,13 @@
           {{ end }}
         </div>
       {{ end }}
+      {{ with .Params.description }}
+        <div class="description">
+          <strong>Description:</strong> 
+	  <span class="description">{{ . }}</span>
+        </div>
+      {{ end }}
+
 
       <div class="post-content">
         {{ .Content }}

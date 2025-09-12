@@ -13,7 +13,7 @@
       {{/* Display Showcase Project */}}
       {{ if $showcaseProject }}
         <div class="showcase-project">
-          <h2>Showcase Project</h2>
+          <h2>Currently Working On:</h2>
           <div class="post-item">
             <div class="post-item-inner">
               <a href="{{ $showcaseProject.Permalink }}">
@@ -38,6 +38,7 @@
         {{/* Find all non-archived, non-showcase projects */}}
         {{ $projects := where .Site.Pages "Section" "projects" }}
         {{ $regularProjects := where $projects "Params.archived" "ne" true }}
+        {{ $regularProjects := where $projects "Params.hidden" "ne" true }}
         {{ $nonShowcaseProjects := where $regularProjects "Params.showcase" "ne" true }}
 
         {{ range $nonShowcaseProjects }}

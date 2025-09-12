@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "Test Project 1"
 # The uid should be a unique, permanent identifier for this project.
 # It's a good idea to set it to the project's folder name and never change it.
@@ -12,7 +12,7 @@ showcase: false # Set to 'true' to feature this on the homepage
 archived: false # Set to 'true' to move this to the archive page
 ---
 
-# the most beautifulest test project evar :D
+# the most beautifulest test project evar :(((
 
 words
 words
@@ -27,11 +27,7 @@ words
     {{< img src="2025-08-28-230532_hyprshot.png"  size="medium">}}
 {{< /image_grid >}}
 
-
-
 ---
-
-
 
 {{< code open="true" language="gdscript" >}}
 
@@ -40,4 +36,3 @@ func _ready:
     # test variable = 4
 
 {{< /code >}}
-

@@ -6,7 +6,21 @@
     <description>Recent content in Projects on Eyan&#39;s_Creations</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Thu, 11 Sep 2025 21:14:12 -0700</lastBuildDate>
     <atom:link href="//localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lift</title>
+      <link>//localhost:1313/projects/lift/</link>
+      <pubDate>Thu, 11 Sep 2025 21:14:12 -0700</pubDate>
+      <guid>//localhost:1313/projects/lift/</guid>
+      <description>A game about defending your elevator</description>
+    </item>
+    <item>
+      <title>Test Project 1</title>
+      <link>//localhost:1313/projects/test-project-1/</link>
+      <pubDate>Thu, 11 Sep 2025 19:11:08 -0700</pubDate>
+      <guid>//localhost:1313/projects/test-project-1/</guid>
+      <description>A brief, exciting one-liner about this project.</description>
+    </item>
   </channel>
 </rss>
