@@ -6,7 +6,7 @@
 	--foreground: #917ebe;
 	--accent: #6c40bf;
 	--radius: 0;
-	--font-size: 1rem;
+	--font-size: 1.28rem;
 	--line-height: 1.54em;
 }
 
@@ -24,12 +24,13 @@ html {
 
 body {
 	font-family:
-		"Fira Code",
+		/*"Fira Code",*/
 		"JetBrains Mono",
-		Monaco,
+		/*Monaco,
 		Consolas,
 		"Ubuntu Mono",
-		monospace;
+		*/
+		monospace !important;
 	font-size: var(--font-size);
 	font-weight: 400;
 	line-height: var(--line-height);
@@ -44,7 +45,7 @@ body {
 }
 
 h1 {
-	font-size: calc(var(--font-size) * 1.45);
+	font-size: calc(var(--font-size) * 1.5);
 	letter-spacing: 0;
 }
 
@@ -78,7 +79,7 @@ img,
 figure,
 video,
 table {
-	margin: 25px 0;
+	margin: 6px 0;
 }
 
 a {
@@ -216,6 +217,7 @@ img {
 	border-radius: var(--radius);
 	padding: 8px;
 	overflow: hidden;
+	object-fit: cover;
 }
 
 figure img,
@@ -401,41 +403,44 @@ button {
 
 /* Custom styles for the image grid shortcode */
 .image-grid {
-  display: grid;
-  /* This creates a responsive grid that will leave empty cells on the last row if it's not full */
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 0.5rem;
-  margin: 25px 0;
+	display: grid;
+	/* This creates a responsive grid that will leave empty cells on the last row if it's not full */
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 0.5rem;
+	margin: 25px 0;
 }
 
 /* Override the default image styling for images within the grid */
 .image-grid img {
-  display: block;
-  max-width: 100%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 1px solid var(--accent); /* Use the theme's accent color for a thinner border */
-  padding: 0; /* Remove the default padding for a cleaner grid look */
-  border-radius: var(--radius); /* Use the theme's radius variable (which is 0) */
-  overflow: hidden;
+	display: block;
+	max-width: 80%;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border: 4px solid var(--accent);
+	/* Use the theme's accent color for a thinner border */
+	padding: 4;
+	/* Remove the default padding for a cleaner grid look */
+	border-radius: var(--radius);
+	/* Use the theme's radius variable (which is 0) */
+	overflow: hidden;
 }
 
 /* Additional styles for sized items in the image grid */
 .grid-item-wide {
-  grid-column: span 2;
+	grid-column: span 2;
 }
 
 .grid-item-tall {
-  grid-row: span 2;
+	grid-row: span 2;
 }
 
 .grid-item-medium {
-  grid-column: span 2;
-  grid-row: span 2;
+	grid-column: span 2;
+	grid-row: span 2;
 }
 
 .grid-item-large {
-  grid-column: span 3;
-  grid-row: span 3;
+	grid-column: span 3;
+	grid-row: span 3;
 }
