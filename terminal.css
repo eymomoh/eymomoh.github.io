@@ -6,7 +6,8 @@
 	--foreground: #917ebe;
 	--accent: #6c40bf;
 	--radius: 0;
-	--font-size: 1.28rem;
+	--font-size: 1.1rem;
+	/* originally 1.0rem ^ */
 	--line-height: 1.54em;
 }
 
@@ -42,6 +43,9 @@ body {
 	-webkit-text-size-adjust: 100%;
 	margin: 0;
 	padding: 0;
+	border: 2px solid var(--accent);
+	border-radius: var(--radius);
+
 }
 
 h1 {
@@ -443,4 +447,14 @@ button {
 .grid-item-large {
 	grid-column: span 3;
 	grid-row: span 3;
+}
+
+
+
+.post-item-inner {
+	margin-top: 2rem;
+	margin-bottom: 40px;
+	border: 2px solid var(--accent);
+	border-radius: var(--radius);
+	padding: 12px
 }
